@@ -1,0 +1,91 @@
+CREATE schema sqlproj;
+USE sqlproj ;
+
+CREATE TABLE Employees
+( 
+EmployeeId       INT(20) PRIMARY KEY,
+EmployeeName       VARCHAR(40),
+EmployeeSalary         INT(45),
+job              VARCHAR(100),
+AirportName     VARCHAR(30)
+);
+insert into Employees
+values(112003,'nada',2500,'Airplane	Employee','King	Khaled international');
+insert into Employees
+values(112004,'Noma',3000,'Airplane	Employee','King	Fahad international');
+insert into Employees
+values(112005,'hala',2000,'Airport Employee','Prince Mohammed bin AbduAziz');
+insert into Employees
+values(112006,'Hind',4000,'customer service agent','Abha international Airport');
+insert into Employees
+values(112007,'khaoloud',6000,'Airline customer service','AlAhsa international Airport'); 
+CREATE TABLE Passengers
+( 
+passengerid INT(20) PRIMARY KEY,
+PassengerName VARCHAR(40),
+PassengerAge INT(30),
+Poatalcode INT(50)
+);
+INSERT INTO Passengers
+                    VALUES(4420173,'eman',21,22230);
+	INSERT INTO Passengers
+                    VALUES(6578933,'Nora',22,22231);
+	INSERT INTO Passengers
+                    VALUES(4567893,'Waad',19,22232);
+ INSERT INTO Passengers
+	         	VALUES(4420486,'Ahmed',23,58746);
+	INSERT INTO Passengers
+                    VALUES(4420176,'mohammed',34,782146);
+                   
+CREATE TABLE Flight
+( 
+Flightid         INT(4) PRIMARY KEY,
+FlightName       VARCHAR(4),
+Capacity         INT(4),
+StartingTime     VARCHAR(20),
+ReachingTime     VARCHAR(20),
+Destination      VARCHAR(20),
+price            dec(7.2)
+);
+INSERT INTO Flight
+                    VALUES(1141,'11a',70,'8:00am','10:05am','London',2000);
+INSERT INTO Flight
+                    VALUES(1231,'12b',40,'12:30am','5:45pm','turkey',1500);
+INSERT INTO Flight
+                    VALUES(1311,'13c',30,'3:10am','8:00pm','Malaysia',1000);
+INSERT INTO Flight
+                    VALUES(1555,'20s',50,'1:30pm','7:00pm','korea',3000);
+INSERT INTO Flight
+                    VALUES(1829,'17d',60,'5:10am','9:00pm','Russia',3500);                    
+CREATE TABLE Ticketcounter
+(
+passengerid      INT(20) ,
+Flightid         INT(4) ,
+Ticketid         INT(30) PRIMARY KEY ,
+destination      VARCHAR(40),
+price            dec(7.2)
+);
+insert into Ticketcounter
+           values(4420173,1141,1789,'London',2000);
+insert into Ticketcounter
+           values(5678933,1231,1767,'turkey',1500);
+insert into Ticketcounter
+            values(4567893,1311,1756,'malaysia',1000);
+ insert into Ticketcounter
+            values(4567892,6785,76427,'malaysia',1600);
+ insert into Ticketcounter
+            values(4567895,4358,65123,'London',2400);
+CREATE table Airport (
+CityName varchar(20) NOT NULL,
+Area varchar(20) ,
+Schedule varchar(20) ,
+Flightid INT (4) ,
+Ticketid INT(30) ,
+AirportName varchar(30) ,
+CONSTRAINT AirPort_PK PRIMARY KEY (AirportName)
+);
+insert into Airport values('Jeddah','runway','5:30',4568,89680,'King Khaled international');
+insert into Airport values ('Jeddah','ramp','7:19',4567,23678,'King Fahad international');
+insert into Airport values ('medina','taxiway','11:00',3457,56780,'Prince Mohammed bin AbduAziz');
+insert into Airport values ('AlAhsa','sunny','1:00',6785,76427,'AlAhsa international Airport');
+insert into Airport values ('Abha','Landing','8:00',4358,65123,'Abha international Airport');
